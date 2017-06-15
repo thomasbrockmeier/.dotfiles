@@ -7,7 +7,7 @@ https://github.com/ptrr/arch-dots
 https://github.com/jaagr/dots
 
 
-# Setup
+# Setup (MacBook)
 
 https://medium.com/@philpl/arch-linux-running-on-my-macbook-2ea525ebefe3
 
