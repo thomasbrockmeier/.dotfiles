@@ -15,7 +15,7 @@ elif xrandr --query | grep "^DP-1 connected"; then
   xrandr --auto --output "DP-1" --dpi 96 --mode "1920x1200" --primary --output "eDP-1" --off
 elif xrandr --query | grep "^DP1 connected"; then
   echo "1 external DP monitor found"
-  xrandr --output "DP1" --mode "1920x1080" --primary
+  xrandr --auto --output "DP1" --mode "1920x1080" --primary
   if xrandr --query | grep "^DP2 connected"; then
     echo "2 external DP monitor found"
     xrandr --auto --output "DP2" --dpi 96 --mode "1920x1080" --auto --right-of "DP1" --output "DP1" --dpi 96 --mode "1920x1080" --output "eDP1" --off
