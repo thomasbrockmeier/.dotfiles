@@ -15,3 +15,10 @@ https://blog.chendry.org/2015/01/15/arch-linux-macbook-6.html
 
 
 Feel free to do the same from this repo
+
+
+# Required programs
+
+`git clone https://github.com/schischi/xcwd.git`
+`make`
+`make install`
