@@ -20,5 +20,7 @@ Feel free to do the same from this repo
 # Required programs
 
 `git clone https://github.com/schischi/xcwd.git`
+
 `make`
+
 `make install`
