@@ -19,6 +19,8 @@ Feel free to do the same from this repo
 
 # Required programs
 
+### XCWD
+
 `git clone https://github.com/schischi/xcwd.git`
 
 `make`
