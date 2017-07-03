@@ -26,3 +26,7 @@ Feel free to do the same from this repo
 `make`
 
 `make install`
+
+### SCREENFETCH
+
+`yaourt -S screenfetch`
