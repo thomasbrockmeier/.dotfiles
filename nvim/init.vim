@@ -135,9 +135,18 @@ let g:ctrlp_working_path_mode = 0
 let ruby_no_expensive = 1 " Differentiate between do..end and class..end is slow
 let ruby_operators = 1    " Highlight Ruby operators
 
+" netrw settings
 let g:netrw_list_hide  = "\.git,\.DS_Store"
-let g:netrw_banner     = 0
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 20
 let g:netrw_localrmdir='rm -r'
+augroup ProjectDrawer
+  autocmd!
+  autocmd VimEnter * :Vexplore
+augroup END
 
 let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts = 1
