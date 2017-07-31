@@ -18,7 +18,7 @@ if !isdirectory(expand("~/.vim/bundle/vundle"))
 endif
 
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 
