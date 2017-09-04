@@ -30,7 +30,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # XCWD to start terminals at pwd
-bindsym $mod+Return exec /usr/bin/termite -d "$(xcwd)"
+bindsym $mod+Return exec termite -d "$(xcwd)"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -149,6 +149,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Disable mouse warping
+mouse_warping none
+
 # Start rofi program launcher
 bindsym $mod+d exec --no-startup-id rofi -show run
 
@@ -162,11 +165,11 @@ bindsym $mod+Ctrl+l exec --no-startup-id i3lock -c 000000
 # }     
 
 # Set up displays
-exec_always ~/.dotfiles/window.sh
+# exec_always ~/window.sh
 
 # Start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Compton
 exec --no-startup-id compton -b -c -f
-exec_always --no-startup-id feh --bg-fill ~/Documents/space.png
+exec_always --no-startup-id feh --bg-fill ~/Pictures/earthfromspace-2.jpg
