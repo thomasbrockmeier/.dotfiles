@@ -1,7 +1,7 @@
 [options]
-font = Roboto Mono for Powerline, 12
+font = Roboto Mono for Powerline 12
 clickable_url = true
-browser = chromium
+browser = iridium-browser
 allow_bold = false
 dynamic_title = true
 scrollback_lines = 10000
