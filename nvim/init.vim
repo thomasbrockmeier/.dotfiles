@@ -209,6 +209,9 @@ set foldlevel=99
 nnoremap <space> za
 let g:SimpylFold_docstring_preview=1
 
+" Ack + Silver Surfer
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
 " ==========================
 " AUTOCOMMANDS
 " ==========================
