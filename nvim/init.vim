@@ -27,7 +27,6 @@ Plugin 'gmarik/vundle'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'elixir-lang/vim-elixir'
 Plugin 'gkz/vim-ls'
 Plugin 'kassio/neoterm'
 Plugin 'mileszs/ack.vim'
@@ -43,6 +42,15 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plugin 'airblade/vim-gitgutter'
+Plugin 'ervandew/supertab'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'nvie/vim-flake8'
+Plugin 'bitc/vim-bad-whitespace'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'LeonB/HTML-AutoCloseTag'
 
 if needsToInstallPlugins == 1
   echo "\nInstalling Plugins, please ignore key map error messages\n"
@@ -58,7 +66,7 @@ filetype plugin indent on
 " SETTINGS
 " ==========================
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-colorscheme gruvbox 
+colorscheme gruvbox
 set background=dark
 "hi Normal guibg=NONE ctermbg=NONE
 
@@ -79,7 +87,7 @@ let g:rehash256 = 1
 
 " Python binary locations
 let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python3_host_prog = '/home/thomas/.pyenv/shims/python'
 
 set vb t_vb=               " Turn off beep
 set lazyredraw             " Don't redraw during macro execution
@@ -99,21 +107,39 @@ set undodir=~/.vim/undo    " Where to store undo history
 set timeoutlen=500         " Don't wait so long for ambiguous leader keys
 " set noesckeys              " Get rid of the delay when hitting esc!
 set gdefault               " assume the /g flag on :s substitutions to replace all matches in a line
-set colorcolumn=100
+set colorcolumn=80
 set linespace=5
+set hidden
+set encoding=utf-8
 
 " Indenting always 4 spaces, Python
-set cindent
-set expandtab
-set shiftwidth=4
-set smartindent
-set softtabstop=4
-set tabstop=4
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
+
+let python_highlight_all=1
+syntax on
+
+" Indent web dev files
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2
+
+" Highlight trailing whitespace
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " Search
 set smartcase
 set hlsearch
 set wildignore+=**/tmp
+" Cancel search with Esc
+nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 
 " neovim terminal configuration
 tnoremap <Esc> <C-\><C-n>
@@ -127,6 +153,7 @@ nnoremap <silent> ,th :Ttrb<cr>
 " Show “invisible” characters
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 
+
 " CtrlP settings
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
@@ -135,24 +162,52 @@ let g:ctrlp_working_path_mode = 0
 let ruby_no_expensive = 1 " Differentiate between do..end and class..end is slow
 let ruby_operators = 1    " Highlight Ruby operators
 
-" netrw settings
-let g:netrw_list_hide  = "\.git,\.DS_Store"
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 20
-let g:netrw_localrmdir='rm -r'
-augroup ProjectDrawer
-  autocmd!
-  autocmd VimEnter * :Vexplore
-augroup END
+" netrw file browser settings
+" let g:netrw_list_hide  = "\.git,\.DS_Store"
+" let g:netrw_banner = 0
+" let g:netrw_liststyle = 3
+" let g:netrw_browse_split = 4
+" let g:netrw_altv = 1
+" let g:netrw_winsize = 20
+" let g:netrw_localrmdir='rm -r'
+" augroup ProjectDrawer
+"   autocmd!
+"   autocmd VimEnter * :Vexplore
+" augroup END
 
+" NerdTree
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
+let NERDTreeMapActivateNode='<right>'
+let NERDTreeShowHidden=1
+nmap <leader>n :NERDTreeToggle<CR>
+nmap <leader>j :NERDTreeFind<CR>
+
+" Git Gutter
+set signcolumn=yes
+
+" Start Supertab from top
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
+" Airline Theme
 let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts = 1
 
 set formatprg=par\ -w80\ -q
 
+
+" split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
+let g:SimpylFold_docstring_preview=1
 
 " ==========================
 " AUTOCOMMANDS

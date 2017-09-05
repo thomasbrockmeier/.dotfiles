@@ -114,7 +114,7 @@ function git_branch {
 }
 
 # Add git to PS1
-PS1="\[$COLOR_WHITE\]\n[\W]"          # basename of pwd
+PS1="\[$COLOR_WHITE\][\W]"          # basename of pwd
 PS1+="\[\$(git_color)\]"        # colors git status
 PS1+="\$(git_branch)"           # prints current branch
 PS1+="\[$COLOR_BLUE\]\$\[$COLOR_RESET\] "   # '#' for root, else '$'
