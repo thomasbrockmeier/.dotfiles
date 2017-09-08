@@ -1,5 +1,5 @@
 [options]
-font = Roboto Mono for Powerline 12
+font = Roboto Mono for Powerline 9
 clickable_url = true
 browser = iridium-browser
 allow_bold = false
