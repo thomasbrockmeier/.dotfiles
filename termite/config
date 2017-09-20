@@ -38,8 +38,8 @@ cursor_blink = system
 foreground      = #d5c4a1
 foreground_bold = #ebdbb2
 cursor          = #ebdbb2
-#background      = #282828
-background 	= rgba(24, 19, 24, .6)
+background      = #282828
+#background 	= rgba(24, 19, 24, .6)
 
 # 16 color space
 
