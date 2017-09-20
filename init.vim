@@ -48,9 +48,6 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
-Plugin 'bitc/vim-bad-whitespace'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'LeonB/HTML-AutoCloseTag'
 
 if needsToInstallPlugins == 1
   echo "\nInstalling Plugins, please ignore key map error messages\n"
@@ -66,7 +63,7 @@ filetype plugin indent on
 " SETTINGS
 " ==========================
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-colorscheme gruvbox
+colorscheme gruvbox 
 set background=dark
 "hi Normal guibg=NONE ctermbg=NONE
 
@@ -114,12 +111,12 @@ set encoding=utf-8
 
 " Indenting always 4 spaces, Python
 au BufNewFile,BufRead *.py
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set textwidth=79 |
-    \ set expandtab |
-    \ set autoindent |
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
     \ set fileformat=unix
 
 let python_highlight_all=1
@@ -127,8 +124,8 @@ syntax on
 
 " Indent web dev files
 au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
+    \ set tabstop=2
+    \ set softtabstop=2
     \ set shiftwidth=2
 
 " Highlight trailing whitespace
@@ -187,9 +184,6 @@ nmap <leader>j :NERDTreeFind<CR>
 " Git Gutter
 set signcolumn=yes
 
-" Start Supertab from top
-let g:SuperTabDefaultCompletionType = "<c-n>"
-
 " Airline Theme
 let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts = 1
@@ -208,9 +202,6 @@ set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
 let g:SimpylFold_docstring_preview=1
-
-" Ack + Silver Surfer
-let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " ==========================
 " AUTOCOMMANDS
