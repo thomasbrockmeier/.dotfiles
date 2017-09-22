@@ -168,6 +168,6 @@ exec_always ~/window.sh
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Compton
-exec --no-startup-id compton -b
+# exec --no-startup-id compton -b
 
 exec_always --no-startup-id feh --bg-fill ~/Pictures/earthfromspace-2.jpg
