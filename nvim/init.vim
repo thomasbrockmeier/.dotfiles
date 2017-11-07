@@ -107,7 +107,7 @@ set undodir=~/.vim/undo    " Where to store undo history
 set timeoutlen=500         " Don't wait so long for ambiguous leader keys
 " set noesckeys              " Get rid of the delay when hitting esc!
 set gdefault               " assume the /g flag on :s substitutions to replace all matches in a line
-set colorcolumn=80
+set colorcolumn=100
 set linespace=5
 set hidden
 set encoding=utf-8
