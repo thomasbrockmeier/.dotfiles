@@ -99,9 +99,9 @@ index-sort = true
 label-dimmed-underline = ${BAR.background}
 
 label-focused = %icon%
-label-focused-foreground = #ddd
-label-focused-background = #773f3f3f
-label-focused-underline = #c9665e
+label-focused-foreground = #fba922
+label-focused-background = #000
+label-focused-underline = #fba922
 label-focused-font = 10
 label-focused-padding = 8
 
@@ -113,8 +113,8 @@ label-unfocused-font = 10
 label-unfocused-padding = 8
 
 label-visible = %icon%
-label-visible-foreground = #ddd
-label-visible-background = #773f3f3f
+label-visible-foreground = #fba922
+label-visible-background = #000
 label-visible-underline = #666
 label-visible-font = 10
 label-visible-padding = 8
