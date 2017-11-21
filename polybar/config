@@ -31,6 +31,10 @@ height = 20
 background = ${bar/top.background}
 foreground = ${bar/top.foreground}
 
+;tray-transparent = true
+;tray-background = ${bar/top.background}
+
+
 line-color = ${bar/top.background}
 line-size = 2
 
