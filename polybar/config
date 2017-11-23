@@ -55,10 +55,6 @@ height = 20
 background = ${bar/top.background}
 foreground = ${bar/top.foreground}
 
-;tray-transparent = true
-;tray-background = ${bar/top.background}
-
-
 line-color = ${bar/top.background}
 line-size = 2
 
@@ -86,8 +82,10 @@ height = 20
 background = ${bar/top.background}
 foreground = ${bar/top.foreground}
 
-;tray-transparent = true
-;tray-background = ${bar/top.background}
+tray-transparent = true
+tray-background = ${bar/top.background}
+tray-position = right
+tray-maxsize = 12
 
 line-color = ${bar/top.background}
 line-size = 2
@@ -156,28 +154,28 @@ label-focused = %icon%
 label-focused-foreground = #fba922
 label-focused-background = #000
 label-focused-underline = #fba922
-label-focused-font = 10
+label-focused-font = 8
 label-focused-padding = 8
 
 label-unfocused = %icon%
 label-unfocused-foreground = #ddd
 label-unfocused-background = #000
 label-unfocused-underline = #666
-label-unfocused-font = 10
+label-unfocused-font = 8
 label-unfocused-padding = 8
 
 label-visible = %icon%
 label-visible-foreground = #fba922
 label-visible-background = #000
 label-visible-underline = #666
-label-visible-font = 10
+label-visible-font = 8
 label-visible-padding = 8
 
 label-urgent = %icon%
 label-urgent-foreground = #000000
 label-urgent-background = #bd2c40
 label-urgent-underline = #9b0a20
-label-urgent-font = 10
+label-urgent-font = 8
 label-urgent-padding = 8
 
 [module/bspwm-tmp]
