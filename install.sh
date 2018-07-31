@@ -11,8 +11,12 @@ apt-get update && apt-get -y dist-upgrade
 apt-get -y install git httpie neovim silversearcher-ag tldr tree zsh
 
 # FZF
-git clone --depth 1 https://github.com/junegunn/fzf.git /tmp/fzf
-/tmp/fzf/install --all
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install --all
+
+# Git
+git config --global user.email "thomas.brockmeier@gmail.com"
+git config --global user.name "Thomas Brockmeier"
 
 # Set up zsh
 chsh -s /bin/zsh
@@ -22,22 +26,22 @@ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/to
 apt-get -y install build-essential libffi-dev libncurses-dev libreadline-dev \ 
 	libsqlite-dev libssl-dev zlib1g-dev python-dev python3-pip python3-venv
 
+pip install setuptools virtualenv virtualenvwrapper wheel
 pip3 install setuptools wheel
 
-# Install i3 related stuff
-apt-get -y install dunst feh i3lock i3blocks nitrogen rofi \
-	rxvt-unicode-256color scrot xautolock
-
-pip3 install pywal
-
 # Configure virtualenvwrapper
-pip3 install virtualenvwrapper
 echo "
 export PATH="${PATH}:${HOME}/.local/bin/"
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 source /home/thomas/.local/bin/virtualenvwrapper.sh" | tee -a ~/.bashrc ~/.zshrc
+
+# Install i3 related stuff
+apt-get -y install dunst feh i3lock i3blocks nitrogen rofi \
+	rxvt-unicode-256color scrot xautolock
+
+pip3 install pywal
 
 ## Install i3 ##################################################################
 ## Install build dependencies
